@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Contact form</title>
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    html {
+      background: #e0f1e7;
+    }
+    #form {
+      margin: 100px auto;
+      max-width: 600px;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="text"], input[type="email"], textarea {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+
+
+    input[type="text"], input[type="message"], textarea {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #0c7d69;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .name {
+      display: flex;
+      gap: 10px;
+      
+    }
+
+    .fname, .lname {
+      flex: 1;
+      
+    }
+
+    .query {
+      margin-bottom: 15px;
+      
+    }
+    #queryone , #querytwo {
+      margin-top: 10px;
+      
+    }
+
+    #queryone {
+      margin-left: 10px;
+      margin-right: 30%;
+      border-color: tomato;
+    }
+
+    .query input {
+      margin-right: 5px;
+    }
+    #queryone,#querytwo {
+      display: inline-flex;
+      
+    }
+
+    .consent {
+      margin-bottom: 15px;
+    }
+
+    .required {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="form">
+    <h2>Contact Us</h2>
+    <form onsubmit="submit(); return false;">
+      <div class="name">
+        <div class="fname">
+          <label for="first-name">First Name <span class="required">*</span></label>
+          <input type="text" id="first-name" name="first-name" required>
+        </div>
+        <div class="lname">
+          <label for="last-name">Last Name <span class="required">*</span></label>
+          <input type="text" id="last-name" name="last-name" required>
+        </div>
+      </div>
+
+      <div>
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="query">
+      
+        <label>Query Type</label><br>
+        <div id="queryone">
+          <input type="radio" name="query-type" value="General Enquiry" id="general-enquiry">
+          <label for="general-enquiry">General Enquiry</label>
+        </div>
+        <div id="querytwo">
+          <input type="radio" name="query-type" value="Support Request" id="support-request">
+          <label for="support-request">Support Request</label>
+        </div>
+      </div>
+
+      <div class="message">
+        <label for="message">Message</label><br>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <div class="consent">
+        <input type="checkbox" id="consent" required>
+        <label for="consent">I consent to being contacted by the team</label>
+      </div>
+
+      <button id="submit-btn" type="submit">Submit</button>
+      <p id="submitted" style="color: green;"></p>
+    </form>
+  </div>
+
+  <script>
+    function submit() {
+      document.getElementById("submitted").innerText = "Message Sent! Thanks for completing the form. We'll be in touch soon!";
+    }
+  </script>
+</body>
+</html>
